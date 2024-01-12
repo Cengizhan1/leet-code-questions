@@ -1,6 +1,9 @@
 package com.cengizhan.java.testproject.leet.code.top.interview.questions.easy.collection;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Array {
     public int removeDuplicates(int[] nums) {
@@ -14,7 +17,7 @@ public class Array {
         return i + 1;
     }
 
-    public static int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) {
         int minValue = prices[0];
         int diff = 0;
         int result =0;
@@ -29,16 +32,27 @@ public class Array {
         }
         return result+diff;
     }
-    public static int[] rotate(int[] nums, int k) {
+    public int[] rotate(int[] nums, int k) {
         int[] temp = Arrays.copyOf(nums, nums.length);
         for (int i = 0; i < nums.length; i++) {
             nums[(i + k) % nums.length] = temp[i];
         }
         return nums;
     }
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
-//        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
-//        System.out.println(Arrays.toString(rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
+        Array array = new Array();
+//        System.out.println(array.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+//        System.out.println(Arrays.toString(array.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
+//        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
     }
 }

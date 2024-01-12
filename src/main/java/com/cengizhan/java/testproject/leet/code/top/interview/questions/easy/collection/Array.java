@@ -1,5 +1,7 @@
 package com.cengizhan.java.testproject.leet.code.top.interview.questions.easy.collection;
 
+import java.util.Arrays;
+
 public class Array {
     public int removeDuplicates(int[] nums) {
         int i = 0;
@@ -27,9 +29,16 @@ public class Array {
         }
         return result+diff;
     }
+    public static int[] rotate(int[] nums, int k) {
+        int[] temp = Arrays.copyOf(nums, nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            nums[(i + k) % nums.length] = temp[i];
+        }
+        return nums;
+    }
 
     public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
-        ;
+//        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+//        System.out.println(Arrays.toString(rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
     }
 }

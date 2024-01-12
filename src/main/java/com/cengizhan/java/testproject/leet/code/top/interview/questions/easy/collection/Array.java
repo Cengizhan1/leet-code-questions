@@ -20,18 +20,19 @@ public class Array {
     public int maxProfit(int[] prices) {
         int minValue = prices[0];
         int diff = 0;
-        int result =0;
-        for (int i=1;i<prices.length;i++) {
-            if (prices[i-1]< prices[i]) {
-                    diff = Math.max(diff, prices[i]-minValue);
+        int result = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i - 1] < prices[i]) {
+                diff = Math.max(diff, prices[i] - minValue);
             } else {
                 minValue = prices[i];
-                result+=diff;
-                diff=0;
+                result += diff;
+                diff = 0;
             }
         }
-        return result+diff;
+        return result + diff;
     }
+
     public int[] rotate(int[] nums, int k) {
         int[] temp = Arrays.copyOf(nums, nums.length);
         for (int i = 0; i < nums.length; i++) {
@@ -39,6 +40,7 @@ public class Array {
         }
         return nums;
     }
+
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
@@ -49,10 +51,21 @@ public class Array {
         return false;
     }
 
+    public int singleNumber(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length-1; i += 2) {
+            if (nums[i] != nums[i + 1]) {
+                return nums[i];
+            }
+        }
+        return nums[nums.length - 1];
+    }
+
     public static void main(String[] args) {
         Array array = new Array();
 //        System.out.println(array.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
 //        System.out.println(Arrays.toString(array.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
 //        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
+        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2}));
     }
 }

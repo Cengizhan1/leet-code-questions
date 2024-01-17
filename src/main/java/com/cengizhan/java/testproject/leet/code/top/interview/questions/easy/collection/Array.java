@@ -1,9 +1,6 @@
 package com.cengizhan.java.testproject.leet.code.top.interview.questions.easy.collection;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Array {
     public int removeDuplicates(int[] nums) {
@@ -61,11 +58,32 @@ public class Array {
         return nums[nums.length - 1];
     }
 
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        ArrayList<Integer> result = new ArrayList<>();
+        int i = 0, j = 0, k=0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                result.add(nums1[i]);
+                i++;
+                j++;
+                k++;
+            } else if (nums1[i] < nums2[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
     public static void main(String[] args) {
         Array array = new Array();
 //        System.out.println(array.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
 //        System.out.println(Arrays.toString(array.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
 //        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
-        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2}));
+//        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2})););
+        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
     }
 }

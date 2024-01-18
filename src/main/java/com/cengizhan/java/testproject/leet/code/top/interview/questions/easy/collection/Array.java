@@ -77,6 +77,20 @@ public class Array {
         }
         return result.stream().mapToInt(Integer::intValue).toArray();
     }
+    public int[] plusOne(int[] digits) {
+        int n = digits.length;
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+        int[] ans = new int[n + 1];
+        ans[0] = 1;
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         Array array = new Array();
@@ -84,6 +98,7 @@ public class Array {
 //        System.out.println(Arrays.toString(array.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
 //        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
 //        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2})););
-        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
+//        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
+        System.out.println(Arrays.toString(array.plusOne(new int[]{9})));
     }
 }

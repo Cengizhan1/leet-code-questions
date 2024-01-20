@@ -93,6 +93,10 @@ public class StringQ {
         return result * sign;
     }
 
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+
     public static void main(String[] args) {
         StringQ stringQ = new StringQ();
 
@@ -101,6 +105,7 @@ public class StringQ {
 //        System.out.println(stringQ.firstUniqChar("leetcode"));
 //        System.out.println(stringQ.isAnagram("anagram", "nagaram"));
 //        System.out.println(stringQ.isPalindrome("0P"));
-        System.out.println(stringQ.myAtoi("42"));
+//        System.out.println(stringQ.myAtoi("42"));
+        System.out.println(stringQ.strStr("hello", "ell"));
     }
 }

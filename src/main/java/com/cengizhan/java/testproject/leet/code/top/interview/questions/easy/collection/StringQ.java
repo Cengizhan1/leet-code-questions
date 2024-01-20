@@ -40,6 +40,7 @@ public class StringQ {
         }
         return -1;
     }
+
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -59,7 +60,7 @@ public class StringQ {
     }
 
     public boolean isPalindrome(String s) {
-        if (s.length() <= 1)  return true;
+        if (s.length() <= 1) return true;
         String cleanStr = s.replaceAll("\\s+", "").replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
         int i = 0, j = cleanStr.length() - 1;
         while (i < j) {
@@ -70,6 +71,28 @@ public class StringQ {
         return true;
     }
 
+    public int myAtoi(String s) {
+        int index = 0;
+        int sign = 1;
+        int result = 0;
+        while (index < s.length() && s.charAt(index) == ' ') {
+            index++;
+        }
+        if (index < s.length() && (s.charAt(index) == '-' || s.charAt(index) == '+')) {
+            sign = (s.charAt(index) == '-') ? -1 : 1;
+            index++;
+        }
+        while (index < s.length() && Character.isDigit(s.charAt(index))) {
+            int digit = Character.getNumericValue(s.charAt(index));
+            if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && digit > 7)) {
+                return (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+            result = result * 10 + digit;
+            index++;
+        }
+        return result * sign;
+    }
+
     public static void main(String[] args) {
         StringQ stringQ = new StringQ();
 
@@ -77,6 +100,7 @@ public class StringQ {
 //        System.out.println(stringQ.reverse(-123));
 //        System.out.println(stringQ.firstUniqChar("leetcode"));
 //        System.out.println(stringQ.isAnagram("anagram", "nagaram"));
-        System.out.println(stringQ.isPalindrome("0P"));
+//        System.out.println(stringQ.isPalindrome("0P"));
+        System.out.println(stringQ.myAtoi("42"));
     }
 }

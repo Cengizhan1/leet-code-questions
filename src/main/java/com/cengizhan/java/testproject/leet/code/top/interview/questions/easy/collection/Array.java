@@ -129,6 +129,6 @@ public class Array {
 //        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
 //        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2})););
 //        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
-        System.out.println(Arrays.toString(array.plusOne(new int[]{9})));
+//        System.out.println(Arrays.toString(array.plusOne(new int[]{9})));
     }
 }

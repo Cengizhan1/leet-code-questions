@@ -58,12 +58,25 @@ public class StringQ {
         return true;
     }
 
+    public boolean isPalindrome(String s) {
+        if (s.length() <= 1)  return true;
+        String cleanStr = s.replaceAll("\\s+", "").replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
+        int i = 0, j = cleanStr.length() - 1;
+        while (i < j) {
+            if (Character.toLowerCase(cleanStr.charAt(i)) != Character.toLowerCase(cleanStr.charAt(j))) return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         StringQ stringQ = new StringQ();
 
 //        System.out.println(stringQ.reverseString(new char[]{'h', 'e', 'l', 'l', 'o'}));
 //        System.out.println(stringQ.reverse(-123));
 //        System.out.println(stringQ.firstUniqChar("leetcode"));
-        System.out.println(stringQ.isAnagram("anagram", "nagaram"));
+//        System.out.println(stringQ.isAnagram("anagram", "nagaram"));
+        System.out.println(stringQ.isPalindrome("0P"));
     }
 }

@@ -6,8 +6,8 @@ public class LinkedListQ {
 
 
     public void deleteNode(ListNode node) {
-        node.val=node.next.val;
-        node.next=node.next.next;
+        node.val = node.next.val;
+        node.next = node.next.next;
 
         System.gc();
     }
@@ -55,23 +55,32 @@ public class LinkedListQ {
     }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if(list1!=null && list2!=null)
-        {
-            if(list1.val < list2.val)
-            {
-                list1.next =  mergeTwoLists(list1.next,list2);
+        if (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                list1.next = mergeTwoLists(list1.next, list2);
                 return list1;
-            }
-            else
-            {
-                list2.next = mergeTwoLists(list1,list2.next);
+            } else {
+                list2.next = mergeTwoLists(list1, list2.next);
                 return list2;
             }
         }
-        return  list1 == null ? list2 : list1;
+        return list1 == null ? list2 : list1;
 
     }
 
+    public boolean isPalindrome(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        for (int i = 0; i < list.size() / 2; i++) {
+            if (list.get(i) != list.get(list.size() - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
     public static void main(String[] args) {

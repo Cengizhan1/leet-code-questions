@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.stringConversesion;
+package com.cengizhan.java.testproject.leet.code.random.stringConversion;
 
 class Result {
 

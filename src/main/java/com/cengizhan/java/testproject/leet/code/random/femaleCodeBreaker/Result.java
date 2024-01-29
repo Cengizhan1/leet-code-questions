@@ -24,10 +24,10 @@ class Result {
         if (gcd == 0){
             return List.of(0, 0);
         }
-        for (int i = 0; i < arr.size(); i++){
-            if (arr.get(i) % gcd ==0){
+        for (Integer integer : arr) {
+            if (integer % gcd == 0) {
                 temp++;
-            }else {
+            } else {
                 temp = 0;
             }
             count = Math.max(count, temp);

@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.femaleCodeBreaker;
+package com.cengizhan.java.testproject.leet.code.random.interview.femaleCodeBreaker;
 
 import java.io.*;
 import java.util.*;

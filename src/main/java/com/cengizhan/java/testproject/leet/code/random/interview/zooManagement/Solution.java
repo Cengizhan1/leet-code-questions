@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.zooManagement;
+package com.cengizhan.java.testproject.leet.code.random.interview.zooManagement;
 
 import java.io.BufferedReader;
 import java.io.IOException;

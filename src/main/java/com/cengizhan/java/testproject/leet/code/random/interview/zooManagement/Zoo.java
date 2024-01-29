@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.zooManagement;
+package com.cengizhan.java.testproject.leet.code.random.interview.zooManagement;
 
 import java.util.*;
 import java.util.stream.Collectors;

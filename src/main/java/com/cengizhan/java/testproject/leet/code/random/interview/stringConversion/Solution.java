@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.stringConversion;
+package com.cengizhan.java.testproject.leet.code.random.interview.stringConversion;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.zooManagement;
+package com.cengizhan.java.testproject.leet.code.random.interview.zooManagement;
 
 interface IAnimal {
     void setId(int id);

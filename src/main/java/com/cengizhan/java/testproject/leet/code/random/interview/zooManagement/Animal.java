@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.zooManagement;
+package com.cengizhan.java.testproject.leet.code.random.interview.zooManagement;
 
 class Animal implements IAnimal {
     public int id;

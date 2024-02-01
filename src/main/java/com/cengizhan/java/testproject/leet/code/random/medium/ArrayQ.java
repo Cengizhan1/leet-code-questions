@@ -28,6 +28,18 @@ public class ArrayQ {
         return resultArray;
     }
 
+    public boolean isMatch(String s, String p) {
+        if (p.length() < s.length() && p.charAt(p.length() - 1) != '*') {
+            return false;
+        }
+        for (int i = 0;i< s.length(); i++){
+            if (p.charAt(i) == '*') return true;
+            if (p.charAt(i) == '.') continue;
+            if (p.charAt(i) != s.charAt(i)) return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         ArrayQ arrayQ = new ArrayQ();
         System.out.println(Arrays.deepToString(arrayQ.divideArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3)));

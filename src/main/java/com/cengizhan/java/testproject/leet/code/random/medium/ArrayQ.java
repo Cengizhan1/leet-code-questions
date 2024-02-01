@@ -1,6 +1,8 @@
 package com.cengizhan.java.testproject.leet.code.random.medium;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ArrayQ {
     public int[][] divideArray(int[] nums, int k) {
@@ -39,9 +41,32 @@ public class ArrayQ {
         }
         return true;
     }
+    public int lengthOfLongestSubstring(String s) {
+        if (s.length() == 0 || s.length() == 1){
+            return s.length();
+        }
+        int temp = 0;
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i; j < s.length(); j++) {
+                if (!set.add(s.charAt(j))) {
+                    set.clear();
+                    break;
+                }
+                set.add(s.charAt(j));
+                if (set.size()>temp) {
+                    temp = set.size();
+                }
+            }
+        }
+
+        return temp;
+    }
 
     public static void main(String[] args) {
         ArrayQ arrayQ = new ArrayQ();
-        System.out.println(Arrays.deepToString(arrayQ.divideArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3)));
+//        System.out.println(Arrays.deepToString(arrayQ.divideArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3)));
+//        System.out.println(arrayQ.isMatch("aa", "a"));
+        System.out.println(arrayQ.lengthOfLongestSubstring("jbpnbwwd"));
     }
 }

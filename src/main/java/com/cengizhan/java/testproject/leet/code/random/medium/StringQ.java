@@ -1,7 +1,5 @@
 package com.cengizhan.java.testproject.leet.code.random.medium;
 
-import java.util.Arrays;
-
 public class StringQ {
 
     int start = 0;
@@ -71,8 +69,8 @@ public class StringQ {
     public static void main(String[] args) {
 
         StringQ stringQ = new StringQ();
-//        System.out.println(stringQ.longestPalindrome("babad"));
-//        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
+        System.out.println(stringQ.longestPalindrome("babad"));
+        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
         System.out.println(stringQ.lengthOfLastWord("Hello World"));
     }
 }

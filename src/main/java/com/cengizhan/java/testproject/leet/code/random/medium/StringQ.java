@@ -56,10 +56,23 @@ public class StringQ {
         return ret.toString();
     }
 
+    public int lengthOfLastWord(String s) {
+        int length = s.length();
+        while (length > 0 && s.charAt(length - 1) == ' ') {
+            length--;
+        }
+        int i = length - 1;
+        while (i >= 0 && s.charAt(i) != ' ') {
+            i--;
+        }
+        return length - 1 - i;
+    }
+
     public static void main(String[] args) {
 
         StringQ stringQ = new StringQ();
 //        System.out.println(stringQ.longestPalindrome("babad"));
-        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
+//        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
+        System.out.println(stringQ.lengthOfLastWord("Hello World"));
     }
 }

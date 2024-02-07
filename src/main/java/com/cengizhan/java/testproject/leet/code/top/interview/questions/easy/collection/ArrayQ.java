@@ -1,8 +1,9 @@
 package com.cengizhan.java.testproject.leet.code.top.interview.questions.easy.collection;
 
+
 import java.util.*;
 
-public class Array {
+public class ArrayQ {
     public int removeDuplicates(int[] nums) {
         int i = 0;
         for (int j = 1; j < nums.length; j++) {
@@ -16,9 +17,10 @@ public class Array {
 
     public int maxProfit(int[] prices) {
         int minValue = prices[0];
+        int len = prices.length;
         int diff = 0;
         int result = 0;
-        for (int i = 1; i < prices.length; i++) {
+        for (int i = 1; i < len; i++) {
             if (prices[i - 1] < prices[i]) {
                 diff = Math.max(diff, prices[i] - minValue);
             } else {
@@ -123,12 +125,13 @@ public class Array {
 
 
     public static void main(String[] args) {
-        Array array = new Array();
+        ArrayQ arrayQ = new ArrayQ();
 //        System.out.println(array.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
 //        System.out.println(Arrays.toString(array.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3)));
 //        System.out.println(array.containsDuplicate(new int[]{1, 2, 3, 1}));
 //        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2})););
 //        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
 //        System.out.println(Arrays.toString(array.plusOne(new int[]{9})));
+        System.out.println(arrayQ.maxProfit(new int[]{1,2,4}));
     }
 }

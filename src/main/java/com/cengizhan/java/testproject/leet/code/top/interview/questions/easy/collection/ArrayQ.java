@@ -17,12 +17,12 @@ public class ArrayQ {
 
     public int maxProfit(int[] prices) {
         int minValue = prices[0];
-        int len = prices.length;
         int diff = 0;
         int result = 0;
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < prices.length; i++) {
             if (prices[i - 1] < prices[i]) {
                 diff = Math.max(diff, prices[i] - minValue);
+                i++;
             } else {
                 minValue = prices[i];
                 result += diff;
@@ -132,6 +132,6 @@ public class ArrayQ {
 //        System.out.println(array.singleNumber(new int[]{4, 1, 2, 1, 2})););
 //        System.out.println(Arrays.toString(array.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));;
 //        System.out.println(Arrays.toString(array.plusOne(new int[]{9})));
-        System.out.println(arrayQ.maxProfit(new int[]{1,2,4}));
+        System.out.println(arrayQ.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
     }
 }

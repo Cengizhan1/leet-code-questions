@@ -89,6 +89,17 @@ public class ArrayQ {
         else return new_arr[n/2];
     }
 
+    public int maxProfit2(int[] prices) {
+        int minValue = prices[0];
+        int len = prices.length;
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            minValue = Math.min(minValue,prices[i]);
+            result = Math.max(result, prices[i]-minValue);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         ArrayQ arrayQ = new ArrayQ();
 //        System.out.println(Arrays.deepToString(arrayQ.divideArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3)));

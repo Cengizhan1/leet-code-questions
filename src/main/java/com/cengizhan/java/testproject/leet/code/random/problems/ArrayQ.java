@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.medium;
+package com.cengizhan.java.testproject.leet.code.random.problems;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.cengizhan.java.testproject.leet.code.random.medium;
+package com.cengizhan.java.testproject.leet.code.random.problems;
 
 public class StringQ {
 
@@ -65,12 +65,43 @@ public class StringQ {
         }
         return length - 1 - i;
     }
+//    public static int StringChallenge(int num) {
+//        if (num < 60){
+//            return num;
+//        }
+//        int count = 0;
+//        while (num >= 60){
+//            num = num - 60;
+//            count++;
+//        }
+//        num = num + 60 * count;
+//        return num;
+//    }
+    public static String StringChallenge(String str) {
+        char temp = str.charAt(0);
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == temp) {
+                count++;
+            } else {
+                sb.append(count);
+                sb.append(temp);
+                temp = str.charAt(i);
+                count = 1;
+            }
+        }
+        sb.append(count);
+        sb.append(temp);
+        return sb.toString();
+    }
 
     public static void main(String[] args) {
 
         StringQ stringQ = new StringQ();
-        System.out.println(stringQ.longestPalindrome("babad"));
-        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
-        System.out.println(stringQ.lengthOfLastWord("Hello World"));
+//        System.out.println(stringQ.longestPalindrome("babad"));
+//        System.out.println(stringQ.convert("PAYPALISHIRING", 3));
+//        System.out.println(stringQ.lengthOfLastWord("Hello World"));
+        System.out.println(StringChallenge("wwwaaab"));
     }
 }

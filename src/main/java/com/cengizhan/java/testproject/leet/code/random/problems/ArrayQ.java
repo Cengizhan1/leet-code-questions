@@ -43,19 +43,19 @@ public class ArrayQ {
         return true;
     }
 
-    public int lengthOfLongestSubstring(String s) {
-        if (s.length() == 0 || s.length() == 1) {
-            return s.length();
+    public int lengthOfLongestSubstring(String input) {
+        if (input.length() == 0 || input.length() == 1) {
+            return input.length();
         }
         int temp = 0;
         Set<Character> set = new HashSet<>();
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i; j < s.length(); j++) {
-                if (!set.add(s.charAt(j))) {
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = i; j < input.length(); j++) {
+                if (!set.add(input.charAt(j))) {
                     set.clear();
                     break;
                 }
-                set.add(s.charAt(j));
+                set.add(input.charAt(j));
                 if (set.size() > temp) {
                     temp = set.size();
                 }

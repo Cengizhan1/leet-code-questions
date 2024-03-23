@@ -1,5 +1,7 @@
 package com.cengizhan.java.testproject.leet.code.top.interview.questions.easy.collection;
 
+import java.util.Arrays;
+
 public class StringQ {
 
     public char[] reverseString(char[] s) {
@@ -41,6 +43,20 @@ public class StringQ {
         return -1;
     }
 
+    public static String findFrequency() {
+        String input = "apple";
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+
+            if (input.charAt(i) == 'a') {
+                count++;
+            }
+
+        }
+        return String.valueOf(count);
+
+    }
+
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -59,9 +75,9 @@ public class StringQ {
         return true;
     }
 
-    public boolean isPalindrome(String s) {
-        if (s.length() <= 1) return true;
-        String cleanStr = s.replaceAll("\\s+", "").replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
+    public boolean isPalindrome(String str) {
+        if (str.length() <= 1) return true;
+        String cleanStr = str.replaceAll("\\s+", "").replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
         int i = 0, j = cleanStr.length() - 1;
         while (i < j) {
             if (Character.toLowerCase(cleanStr.charAt(i)) != Character.toLowerCase(cleanStr.charAt(j))) return false;
@@ -69,6 +85,15 @@ public class StringQ {
             j--;
         }
         return true;
+    }
+
+    public int[] findLargestAndSubstract(int[] arr) {
+
+        Arrays.sort(arr);
+        int[] result = new int[2];
+        result[0] = arr[arr.length - 1];
+        result[1] = arr[arr.length - 2] - arr[arr.length - 1];
+        return result;
     }
 
     public int myAtoi(String s) {
